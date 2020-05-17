@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route:: get('/usuarios',function(){
+    return 'usuario ';
+});
+
+Route :: get('/usuarios/{id}',function($id){
+     return 'mostrando detalle del usuario :'.$id;
+
+})->where('id','[0-9]+');
+
+Route :: get('/usuarios/nuevo',function(){
+return 'crear nuevo usuario';
+});
+
