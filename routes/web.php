@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route:: get('/usuarios',function(){
-    return 'usuario ';
+    return 'usuario';
 });
 
 Route :: get('/usuarios/{id}',function($id){
@@ -27,4 +27,22 @@ Route :: get('/usuarios/{id}',function($id){
 Route :: get('/usuarios/nuevo',function(){
 return 'crear nuevo usuario';
 });
+
+
+Route :: get('/saludo/{nombre}/{nickname?}',function($nombre,$nickname=null){
+
+    if($nickname){
+        return "bienvenido {$nombre}, y tu apodo es {$nickname}";
+
+    }
+    else {
+        return "bienvenido {$nombre} y no tienes ningun apodo";
+    }
+
+
+});
+
+
+
+
 
