@@ -15,34 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route:: get('/usuarios',function(){
-    return 'usuario';
-});
+Route:: get('/usuarios','UserControler@index');
 
-Route :: get('/usuarios/{id}',function($id){
-     return 'mostrando detalle del usuario :'.$id;
+Route :: get('/usuarios/{id}','UserControler@Mostraridusuario')->where('id','[0-9]+');
 
-})->where('id','[0-9]+');
-
-Route :: get('/usuarios/nuevo',function(){
-return 'crear nuevo usuario';
-});
+Route :: get('/usuarios/nuevo','UserControler@Newuser');
 
 
-Route :: get('/saludo/{nombre}/{nickname?}',function($nombre,$nickname=null){
+Route :: get('/saludo/{nombre}/{nickname?}','WelcomeUserController');
 
-    if($nickname){
-        return "bienvenido {$nombre}, y tu apodo es {$nickname}";
-
-    }
-    else {
-        return "bienvenido {$nombre} y no tienes ningun apodo";
-    }
-
-
-});
-
-
+Route :: get('/usuarios/editar','UserControler@Edit');
 
 
 
