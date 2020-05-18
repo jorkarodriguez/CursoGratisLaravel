@@ -22,8 +22,10 @@ Route :: get('/usuarios/{id}','UserControler@Mostraridusuario')->where('id','[0-
 Route :: get('/usuarios/nuevo','UserControler@Newuser');
 
 
-Route :: get('/saludo/{nombre}/{nickname?}','WelcomeUserController');
+Route :: get('/saludo/{nombre}/{nickname}','WelcomeUserController@niknameok');
 
+
+Route :: get('/saludo/{nombre}','WelcomeUserController@niknameoknon');
 Route :: get('/usuarios/editar','UserControler@Edit');
 
 
